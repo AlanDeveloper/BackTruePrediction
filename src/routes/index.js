@@ -1,16 +1,9 @@
 const express = require("express");
+const ResearchController = require("../controllers/ResearchController");
 const routes = express.Router();
 
-routes.get("/cities", async function (req, res, next) {
-    const collection = await Collection();
-
-    try {
-        const result = await collection.insertMany(array);
-        return console.log('adicionado')
-    } catch (err) {
-        return console.log(err)
-    }
-});
+routes.get("/cities", ResearchController.get);
+routes.post("/cities", ResearchController.post);
 
 // NOT FOUND
 routes.use(function (req, res, next) {
