@@ -5,7 +5,6 @@ const citySchema = new mongoose.Schema({
     nameCity: {
         type: String,
         maxlength: 300,
-        unique: true,
         required: true
     },
     weatherId: {
