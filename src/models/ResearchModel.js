@@ -43,6 +43,8 @@ const citySchema = new mongoose.Schema({
         type: mongoose.Types.Decimal128,
         required: true
     }
+}, {
+    timestamps: true
 });
 const ResearchModel = mongoose.model("Cities", citySchema);
 

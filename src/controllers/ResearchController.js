@@ -5,7 +5,7 @@ class ResearchController {
     get = async (req, res, next) => {
         let id = req.params.id;
         try {
-            const cities = id ? await ResearchModel.findById({ _id: new mongoose.Types.ObjectId(id) }) || {} : await ResearchModel.find();
+            const cities = id ? await ResearchModel.findById({ _id: new mongoose.Types.ObjectId(id) }) || {} : await ResearchModel.find().sort({ _id: -1 });
 
             res.status(200);
             return res.json(cities);
